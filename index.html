@@ -1,0 +1,675 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Eventa — Plan, sell and run events in Thailand</title>
+    <meta
+      name="description"
+      content="Eventa brings event pages, tickets, reserved seating, card and PromptPay checkout, QR check-in, attendee messaging, VAT invoices and reports into one workspace."
+    />
+    <meta name="theme-color" content="#00c066" />
+    <meta property="og:title" content="Eventa — Plan, sell and run events in Thailand" />
+    <meta
+      property="og:description"
+      content="Tickets, seating, payments, check-in and messaging in one workspace, with PromptPay and attendee messages in Thai or English."
+    />
+    <meta property="og:type" content="website" />
+    <link rel="icon" type="image/svg+xml" href="assets/favicon.svg" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap"
+      rel="stylesheet"
+    />
+    <!-- "js" hides blocks until they scroll in. If main.js never finishes wiring
+         that up (blocked, failed, threw), drop the class so the page still shows. -->
+    <script>
+      document.documentElement.classList.add("js");
+      setTimeout(function () {
+        var root = document.documentElement;
+        if (!root.classList.contains("js-ready")) root.classList.remove("js");
+      }, 3000);
+    </script>
+    <link rel="stylesheet" href="css/styles.css" />
+    <script src="js/main.js" defer></script>
+  </head>
+  <body>
+    <!-- One sprite for every icon on the page: each <svg><use> below points here. -->
+    <svg class="sprite" aria-hidden="true" focusable="false">
+      <symbol id="i-arrow-right" viewBox="0 0 24 24"><path d="M5 12h14M13 6l6 6-6 6" /></symbol>
+      <symbol id="i-arrow-up-right" viewBox="0 0 24 24"><path d="M7 17 17 7M8 7h9v9" /></symbol>
+      <symbol id="i-check" viewBox="0 0 24 24"><path d="m5 12.5 4.5 4.5L19 7" /></symbol>
+      <symbol id="i-ticket" viewBox="0 0 24 24"><path d="M4 7a2 2 0 0 1 2-2h12a2 2 0 0 1 2 2v2.2a2.5 2.5 0 0 0 0 4.6V17a2 2 0 0 1-2 2H6a2 2 0 0 1-2-2v-3.2a2.5 2.5 0 0 0 0-4.6V7Z" /><path d="M14.5 5v14" stroke-dasharray="2 2.5" /></symbol>
+      <symbol id="i-menu" viewBox="0 0 24 24"><path d="M4 7h16M4 12h16M4 17h16" /></symbol>
+      <symbol id="i-close" viewBox="0 0 24 24"><path d="M6 6l12 12M18 6 6 18" /></symbol>
+      <symbol id="i-plus" viewBox="0 0 24 24"><path d="M12 5v14M5 12h14" /></symbol>
+      <!-- Toast icons, drawn after Hugeicons stroke-rounded (the app's icon set). -->
+      <symbol id="i-wallet" viewBox="0 0 24 24"><path d="M3 8.5v8A3.5 3.5 0 0 0 6.5 20h11a3.5 3.5 0 0 0 3.5-3.5v-5A3 3 0 0 0 18 8.5H6A3 3 0 0 1 3 5.5" /><path d="M3 5.5A2.5 2.5 0 0 1 5.5 3h10A2.5 2.5 0 0 1 18 5.5v3" /><path stroke-width="2" d="M16.49 14.25h.01" /></symbol>
+      <symbol id="i-facebook" viewBox="0 0 24 24"><path fill="currentColor" stroke="none" d="M13.5 21v-7.5h2.6l.4-3h-3V8.6c0-.9.3-1.5 1.5-1.5h1.6V4.4c-.3 0-1.2-.1-2.3-.1-2.3 0-3.9 1.4-3.9 4v2.2H7.8v3h2.6V21h3.1Z" /></symbol>
+      <symbol id="i-instagram" viewBox="0 0 24 24"><rect x="3.5" y="3.5" width="17" height="17" rx="5" /><circle cx="12" cy="12" r="4" /><path d="M17.2 6.8v.01" /></symbol>
+      <symbol id="i-linkedin" viewBox="0 0 24 24"><path fill="currentColor" stroke="none" d="M6.9 8.6H3.8V20h3.1V8.6ZM5.4 3.8a1.8 1.8 0 1 0 0 3.6 1.8 1.8 0 0 0 0-3.6ZM20.2 13.4c0-3-1.6-4.9-4.3-4.9-1.4 0-2.4.8-2.8 1.5V8.6h-3V20h3.1v-6c0-1.4.6-2.6 2.1-2.6 1.4 0 1.8 1.2 1.8 2.7V20h3.1v-6.6Z" /></symbol>
+      <symbol id="i-youtube" viewBox="0 0 24 24"><path fill="currentColor" stroke="none" d="M21.6 7.2a2.5 2.5 0 0 0-1.8-1.8C18.2 5 12 5 12 5s-6.2 0-7.8.4a2.5 2.5 0 0 0-1.8 1.8C2 8.8 2 12 2 12s0 3.2.4 4.8c.2.9.9 1.6 1.8 1.8 1.6.4 7.8.4 7.8.4s6.2 0 7.8-.4a2.5 2.5 0 0 0 1.8-1.8c.4-1.6.4-4.8.4-4.8s0-3.2-.4-4.8ZM10 15V9l5.2 3L10 15Z" /></symbol>
+    </svg>
+
+    <a class="skip-link" href="#main">Skip to content</a>
+
+    <!-- ============================== NAV ============================== -->
+    <!-- PLACEHOLDER LINKS across the page: #login, #signup, #about, #careers, the
+         social links, #privacy and #terms have no target yet. Point them at the
+         real app sign-in/sign-up, pages and profiles before launch. -->
+    <header class="nav" data-nav>
+      <div class="container nav__inner">
+        <a class="brand" href="#top" aria-label="Eventa home">
+          <img class="brand__mark" src="assets/logo-mark.svg" alt="" width="34" height="19" />
+          <span class="brand__word">Eventa</span>
+        </a>
+
+        <nav class="nav__links" aria-label="Primary">
+          <a href="#features">Features</a>
+          <a href="#solutions">Solutions</a>
+          <a href="#pricing">Pricing</a>
+          <a href="#faq">FAQ</a>
+        </nav>
+
+        <div class="nav__actions">
+          <a class="nav__login" href="#login">Log in</a>
+          <a class="btn btn--dark btn--sm" href="#pricing">Start for free</a>
+          <button class="nav__toggle" type="button" aria-expanded="false" aria-controls="mobile-menu" data-menu-toggle>
+            <span class="sr-only">Open menu</span>
+            <svg class="i i--lg" aria-hidden="true"><use href="#i-menu" /></svg>
+          </button>
+        </div>
+      </div>
+
+      <div class="mobile-menu" id="mobile-menu" hidden data-menu>
+        <nav class="mobile-menu__inner" aria-label="Mobile">
+          <a href="#features">Features</a>
+          <a href="#solutions">Solutions</a>
+          <a href="#pricing">Pricing</a>
+          <a href="#faq">FAQ</a>
+          <div class="mobile-menu__ctas">
+            <a class="btn btn--light" href="#login">Log in</a>
+            <a class="btn btn--dark" href="#pricing">Start for free</a>
+          </div>
+        </nav>
+      </div>
+    </header>
+
+    <main id="main">
+      <!-- ============================== HERO ============================== -->
+      <section class="hero" id="top">
+        <!-- One deep-green surface from the top edge (the nav sits on it) to its
+             rounded bottom edge, which ends behind the product window below. -->
+        <div class="hero__panel has-grain">
+          <div class="container hero__copy">
+            <a class="pill-badge" href="#solutions" data-reveal>
+              <span class="pill-badge__tag">New</span>
+              <span>Buyers pick their own seats</span>
+              <svg class="i" aria-hidden="true"><use href="#i-arrow-right" /></svg>
+            </a>
+
+            <h1 class="hero__title" data-reveal style="--d: 80ms">
+              From first ticket <span class="grad-text">to final report.</span>
+            </h1>
+
+            <p class="hero__lead" data-reveal style="--d: 160ms">
+              Tickets, seating, PromptPay and card payments, <span style="white-space: nowrap">check-in</span> and attendee messages in Thai or English&nbsp;— in
+              one workspace built for organizers in Thailand.
+            </p>
+
+            <div class="hero__ctas" data-reveal style="--d: 240ms">
+              <a class="btn btn--light" href="#pricing">
+                Start for free
+                <span class="btn__icon"><svg class="i" aria-hidden="true"><use href="#i-arrow-up-right" /></svg></span>
+              </a>
+              <a class="btn btn--glass" href="#features">See how it works</a>
+            </div>
+          </div>
+        </div>
+
+        <!-- The real product: the Eventa dashboard as captured from the UI kit
+             (sample data). Phones get the kit's own phone layout of the same
+             screen. Pulled up so the window overlaps the panel's bottom edge. -->
+        <div class="container hero__showcase">
+          <div class="hero__stage" data-reveal="zoom" style="--d: 380ms">
+            <div class="shot-window hero__shot">
+              <picture>
+                <source
+                  media="(max-width: 720px)"
+                  srcset="assets/shots/hero-mobile@1x.webp 1x, assets/shots/hero-mobile@2x.webp 2x, assets/shots/hero-mobile@3x.webp 3x"
+                  width="390"
+                  height="844"
+                />
+                <img
+                  src="assets/shots/hero@1x.webp"
+                  srcset="assets/shots/hero@1x.webp 1x, assets/shots/hero@2x.webp 2x"
+                  width="1280"
+                  height="790"
+                  fetchpriority="high"
+                  decoding="async"
+                  alt="The Eventa dashboard: 1,340 registrations, ฿48.29k in ticket revenue, 12 upcoming events, an 87% check-in rate and 78% of capacity filled."
+                />
+              </picture>
+            </div>
+
+            <!-- Two of the app's own notifications, using names and numbers from the
+                 screen above. Each fades in once after the window, then stays put.
+                 Decorative: the screen already shows both facts. -->
+            <div class="toast toast--pay" data-reveal style="--d: 1000ms" aria-hidden="true">
+              <div class="toast__card">
+                <span class="toast__icon toast__icon--blue"><svg class="i"><use href="#i-wallet" /></svg></span>
+                <span class="toast__text"><b>Payment received</b><small>฿1,250 from Anong P.</small></span>
+              </div>
+            </div>
+            <div class="toast toast--sold" data-reveal style="--d: 1300ms" aria-hidden="true">
+              <div class="toast__card">
+                <span class="toast__icon toast__icon--amber"><svg class="i"><use href="#i-ticket" /></svg></span>
+                <span class="toast__text"><b>Almost sold out</b><small>Bangkok Jazz Night · 3 tickets left</small></span>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Integrations: one still, centred row that wraps on small screens. -->
+        <div class="container logos">
+          <p class="logos__label">Works with the tools you already use</p>
+          <ul class="logos__list">
+            <li>Stripe</li>
+            <li>PromptPay</li>
+            <li>Visa</li>
+            <li>Mastercard</li>
+            <li>Google Calendar</li>
+            <li>Google Meet</li>
+            <li>Microsoft Excel</li>
+          </ul>
+        </div>
+      </section>
+
+      <!-- ============================== FEATURES ============================== -->
+      <section class="section" id="features">
+        <div class="container">
+          <div class="split-head">
+            <div>
+              <span class="eyebrow" data-reveal>Why Eventa</span>
+              <h2 class="h2" data-reveal style="--d: 60ms">Everything Your Team Needs To Run Events Faster</h2>
+            </div>
+            <div class="split-head__aside" data-reveal style="--d: 120ms">
+              <p>
+                From the first draft to the last refund, every part of an event lives in one place. No spreadsheets
+                passed around and no tools stitched together, just one workspace your whole team can trust.
+              </p>
+              <a class="btn btn--dark btn--sm" href="#solutions">See it in action</a>
+            </div>
+          </div>
+
+          <!-- Close crops of real kit screens (sample data). Each one sits on the
+               kit's own page grey and runs off the tile's right and bottom edges,
+               where it fades into that grey. --top (1x px) lifts a crop so the
+               tile's bottom edge falls between lines of text. -->
+          <div class="feature-grid">
+            <!-- 1 · Ticket sales (admin/tickets.html) -->
+            <article class="feature" data-reveal style="--d: 0ms">
+              <div class="shot-tile feature__shot">
+                <img
+                  src="assets/shots/feature-sales@1x.webp"
+                  srcset="assets/shots/feature-sales@1x.webp 1x, assets/shots/feature-sales@2x.webp 2x"
+                  width="726"
+                  height="466"
+                  style="--w: 726px"
+                  loading="lazy"
+                  decoding="async"
+                  alt="Ticket type cards with price, status and sales so far: General Admission for Tech Summit 2026 at ฿1,250 is on sale, with 640 of 800 sold (80%)."
+                />
+              </div>
+              <h3>Ticket Sales</h3>
+              <p>Every ticket type shows its price, its status and how many have sold, so you can see what's on sale, scheduled or about to sell out.</p>
+            </article>
+
+            <!-- 2 · Attendee directory (admin/attendees.html) -->
+            <article class="feature" data-reveal style="--d: 90ms">
+              <div class="shot-tile feature__shot">
+                <img
+                  src="assets/shots/feature-attendees@1x.webp"
+                  srcset="assets/shots/feature-attendees@1x.webp 1x, assets/shots/feature-attendees@2x.webp 2x"
+                  width="633"
+                  height="425"
+                  style="--w: 633px; --top: 6px"
+                  loading="lazy"
+                  decoding="async"
+                  alt="The attendee directory with tabs for all 2,847 attendees, 219 new, 1,176 checked in and 96 VIPs, a search box, and a list of attendees with their phone numbers and how many events each has joined."
+                />
+              </div>
+              <h3>Attendee Directory</h3>
+              <p>Search everyone who has registered for your events by name or email, filter to new, checked-in or VIP guests, and see how many events each person has joined.</p>
+            </article>
+
+            <!-- 3 · Automated messages (admin/messaging-templates.html) -->
+            <article class="feature" data-reveal style="--d: 180ms">
+              <div class="shot-tile feature__shot">
+                <img
+                  src="assets/shots/feature-messaging@1x.webp"
+                  srcset="assets/shots/feature-messaging@1x.webp 1x, assets/shots/feature-messaging@2x.webp 2x"
+                  width="742"
+                  height="461"
+                  style="--w: 742px"
+                  loading="lazy"
+                  decoding="async"
+                  alt="Automated message templates, each switched on: registration confirmation and event reminder by email and SMS, payment receipt by email, and a waitlist offer by email and SMS."
+                />
+              </div>
+              <h3>Automated Messages</h3>
+              <p>Confirmations, receipts, 24-hour reminders and waitlist offers go out on their own by email or SMS. Switch each one on or off, edit its wording, and check the delivery log.</p>
+            </article>
+          </div>
+        </div>
+      </section>
+
+      <!-- ============================== SOLUTIONS ============================== -->
+      <section class="section section--tint" id="solutions">
+        <div class="container">
+          <div class="center-head">
+            <span class="eyebrow" data-reveal>Use cases</span>
+            <h2 class="h2" data-reveal style="--d: 60ms">Built For Every Kind Of Event, Tailored To How You Work</h2>
+            <p data-reveal style="--d: 120ms">
+              From a 40-seat workshop to a 4,000-seat concert hall, Eventa fits the way your team sells tickets and
+              runs the day.
+            </p>
+          </div>
+
+          <!-- Spotlight 1 · Conferences (admin/event-detail.html, Agenda tab) -->
+          <div class="spotlight">
+            <div class="spotlight__copy" data-reveal="left">
+              <h3 class="h3">Conferences &amp; Summits</h3>
+              <p>
+                Plan the agenda day by day, with keynotes, talks, workshops and panels, each with its time, room and
+                speaker. Then publish a polished event page from one of four templates.
+              </p>
+              <ul class="ticks">
+                <li><svg class="i" aria-hidden="true"><use href="#i-check" /></svg>Agenda, sessions and speaker line-up</li>
+                <li><svg class="i" aria-hidden="true"><use href="#i-check" /></svg>Share links, social buttons and a printable QR flyer</li>
+              </ul>
+            </div>
+
+            <div class="spotlight__visual" data-reveal="right">
+              <div class="shot-tile spot-shot spot-shot--agenda">
+                <img
+                  src="assets/shots/solution-conferences@1x.webp"
+                  srcset="assets/shots/solution-conferences@1x.webp 1x, assets/shots/solution-conferences@2x.webp 2x"
+                  width="752"
+                  height="572"
+                  style="--w: 752px"
+                  loading="lazy"
+                  decoding="async"
+                  alt="A two-day agenda for Tech Summit 2026: day one opens with a 09:00 keynote in Hall A, followed by a talk, a workshop in Hall B and a panel, and day two starts with a 09:30 keynote."
+                />
+              </div>
+            </div>
+          </div>
+
+          <!-- Spotlight 2 · Concerts & venues, reversed (portal/register.html, the attendee checkout) -->
+          <div class="spotlight spotlight--reverse">
+            <div class="spotlight__copy" data-reveal="right">
+              <h3 class="h3">Concerts &amp; Venues</h3>
+              <p>
+                Set out your rows and seats once. Buyers choose a ticket type, pick their own seats on the seat map,
+                where booked seats are greyed out, and pay by card or PromptPay.
+              </p>
+              <ul class="ticks">
+                <li><svg class="i" aria-hidden="true"><use href="#i-check" /></svg>Reserved seating, up to 8 seats per booking</li>
+                <li><svg class="i" aria-hidden="true"><use href="#i-check" /></svg>QR ticket scanning at the door</li>
+              </ul>
+            </div>
+
+            <div class="spotlight__visual" data-reveal="left">
+              <div class="shot-tile spot-shot spot-shot--seats">
+                <img
+                  src="assets/shots/solution-concerts@1x.webp"
+                  srcset="assets/shots/solution-concerts@1x.webp 760w, assets/shots/solution-concerts@2x.webp 1520w"
+                  sizes="(max-width: 720px) calc(100vw - 66px), (max-width: 960px) min(646px, calc(100vw - 106px)), (max-width: 1247px) calc(57.5vw - 127px), 563px"
+                  width="760"
+                  height="674"
+                  style="--w: 760px"
+                  loading="lazy"
+                  decoding="async"
+                  alt="The attendee seat picker: General Admission at ฿1,250 is chosen over VIP at ฿3,130, and seats E12 and E13 are selected on a seat map of rows A to G facing the stage, with booked seats dimmed."
+                />
+              </div>
+            </div>
+          </div>
+
+          <!-- Spotlight 3 · Workshops (admin/registrations.html on its Pending tab, with
+               the rating card from admin/feedback-detail.html hanging below it) -->
+          <div class="spotlight">
+            <div class="spotlight__copy" data-reveal="left">
+              <h3 class="h3">Workshops &amp; Meetups</h3>
+              <p>
+                Approve or decline registrations by hand when places are limited, keep a waitlist for when someone
+                cancels, and send a feedback survey after the event.
+              </p>
+              <ul class="ticks">
+                <li><svg class="i" aria-hidden="true"><use href="#i-check" /></svg>Approval queue and waitlists</li>
+                <li><svg class="i" aria-hidden="true"><use href="#i-check" /></svg>Post-event surveys and ratings</li>
+              </ul>
+            </div>
+
+            <div class="spotlight__visual spotlight__visual--pair" data-reveal="right">
+              <div class="shot-tile spot-shot spot-shot--queue">
+                <img
+                  src="assets/shots/solution-workshops@1x.webp"
+                  srcset="assets/shots/solution-workshops@1x.webp 1x, assets/shots/solution-workshops@2x.webp 2x"
+                  width="992"
+                  height="503"
+                  style="--w: 992px"
+                  loading="lazy"
+                  decoding="async"
+                  alt="The registrations list on its Pending tab, beside tabs for the waitlist and cancellations: five pending sign-ups, each with its event, ticket, date and amount, and buttons to approve or decline it."
+                />
+              </div>
+              <div class="shot-card spot-survey">
+                <img
+                  src="assets/shots/solution-workshops-survey@1x.webp"
+                  srcset="assets/shots/solution-workshops-survey@1x.webp 1x, assets/shots/solution-workshops-survey@2x.webp 2x"
+                  width="368"
+                  height="313"
+                  loading="lazy"
+                  decoding="async"
+                  alt="Survey results: an overall satisfaction of 4.6 out of 5 from 568 responses."
+                />
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- ============================== PRICING ============================== -->
+      <!-- PLACEHOLDER PLANS: tiers, limits, trial length, yearly discount and prices are
+           not defined in eventa-docs yet. Replace before launch, together with FAQ
+           "Is there a free plan?". -->
+      <section class="section" id="pricing">
+        <div class="container">
+          <div class="center-head">
+            <span class="eyebrow" data-reveal>Pricing</span>
+            <h2 class="h2" data-reveal style="--d: 60ms">Flexible Plans That Grow With You</h2>
+            <p data-reveal style="--d: 120ms">
+              Start free and upgrade as your events grow. Every plan includes event pages, QR tickets and check-in.
+            </p>
+
+            <div class="billing" data-reveal style="--d: 180ms">
+              <span id="bill-monthly">Monthly</span>
+              <button class="switch" type="button" role="switch" aria-checked="false" aria-labelledby="bill-yearly" data-billing>
+                <span class="switch__knob"></span>
+              </button>
+              <span id="bill-yearly">Yearly</span>
+              <span class="save-chip">Save 20%</span>
+            </div>
+          </div>
+
+          <div class="plans">
+            <article class="plan" data-reveal="left">
+              <header class="plan__head">
+                <h3>Starter</h3>
+                <p>For free events, meetups and your first launch.</p>
+                <div class="plan__price"><b>฿0</b><span>forever</span></div>
+                <a class="btn btn--outline btn--block" href="#signup">Get started</a>
+              </header>
+              <ul class="plan__list">
+                <li><svg class="i" aria-hidden="true"><use href="#i-check" /></svg>Unlimited free events and RSVPs</li>
+                <li><svg class="i" aria-hidden="true"><use href="#i-check" /></svg>Event pages from 4 templates</li>
+                <li><svg class="i" aria-hidden="true"><use href="#i-check" /></svg>QR tickets and check-in</li>
+                <li><svg class="i" aria-hidden="true"><use href="#i-check" /></svg>Confirmation and reminder emails</li>
+                <li><svg class="i" aria-hidden="true"><use href="#i-check" /></svg>Attendee directory and registration reports</li>
+                <li><svg class="i" aria-hidden="true"><use href="#i-check" /></svg>Up to 2 teammates</li>
+              </ul>
+            </article>
+
+            <article class="plan plan--featured" data-reveal="right">
+              <header class="plan__head has-grain">
+                <div class="plan__title-row">
+                  <h3>Business</h3>
+                  <span class="plan__badge">Most popular</span>
+                </div>
+                <p>For teams selling paid tickets every month.</p>
+                <div class="plan__price">
+                  <b data-price data-monthly="฿2,590" data-yearly="฿2,070">฿2,590</b>
+                  <span data-price-note data-monthly="per month" data-yearly="per month, billed yearly">per month</span>
+                </div>
+                <a class="btn btn--light btn--block" href="#signup">Start 30-day trial</a>
+              </header>
+              <ul class="plan__list">
+                <li><svg class="i" aria-hidden="true"><use href="#i-check" /></svg>Everything in Starter</li>
+                <li><svg class="i" aria-hidden="true"><use href="#i-check" /></svg>Paid tickets with card and PromptPay</li>
+                <li><svg class="i" aria-hidden="true"><use href="#i-check" /></svg>Reserved seating and seat maps</li>
+                <li><svg class="i" aria-hidden="true"><use href="#i-check" /></svg>Discount codes and waitlists</li>
+                <li><svg class="i" aria-hidden="true"><use href="#i-check" /></svg>VAT invoices, refunds and payout balances</li>
+                <li><svg class="i" aria-hidden="true"><use href="#i-check" /></svg>Announcements and message templates</li>
+                <li><svg class="i" aria-hidden="true"><use href="#i-check" /></svg>Reports with CSV, Excel and PDF export</li>
+                <li><svg class="i" aria-hidden="true"><use href="#i-check" /></svg>Google Calendar meetings</li>
+                <li><svg class="i" aria-hidden="true"><use href="#i-check" /></svg>Custom roles and an audit log</li>
+              </ul>
+            </article>
+          </div>
+        </div>
+      </section>
+
+      <!-- ============================== FAQ ============================== -->
+      <section class="section section--tint" id="faq">
+        <div class="container faq">
+          <div class="faq__intro">
+            <span class="eyebrow" data-reveal>FAQ</span>
+            <h2 class="h2" data-reveal style="--d: 60ms">Your Questions, Answered Clearly</h2>
+            <p data-reveal style="--d: 120ms">
+              Everything you need to know about running events on Eventa. Can't find your answer? Our team is happy to
+              help.
+            </p>
+            <div class="help-card" data-reveal style="--d: 180ms" id="contact">
+              <div class="avatars avatars--lg" aria-hidden="true">
+                <i class="avatar" style="--h: 152">M</i><i class="avatar" style="--h: 205">T</i><i class="avatar" style="--h: 38">K</i>
+              </div>
+              <b>Still have questions?</b>
+              <p>Our team answers in Thai or English.</p>
+              <!-- PLACEHOLDER LINK: point at the real contact channel (email or LINE OA) before launch. -->
+              <a class="btn btn--dark btn--sm" href="#contact">Contact our team</a>
+            </div>
+          </div>
+
+          <div class="accordion" data-accordion>
+            <div class="acc" data-reveal>
+              <h3>
+                <button type="button" aria-expanded="true" aria-controls="faq-1" id="faq-1-btn">
+                  What is Eventa, and who is it for?
+                  <svg class="i" aria-hidden="true"><use href="#i-plus" /></svg>
+                </button>
+              </h3>
+              <div class="acc__panel" id="faq-1" role="region" aria-labelledby="faq-1-btn">
+                <div><p>
+                  Eventa is an event registration and management platform for organizers in Thailand: conference teams,
+                  venues, agencies and community hosts. One workspace covers event pages, tickets, seating, payments,
+                  check-in, messaging, finance and reports.
+                </p></div>
+              </div>
+            </div>
+
+            <div class="acc" data-reveal style="--d: 40ms">
+              <h3>
+                <button type="button" aria-expanded="false" aria-controls="faq-2" id="faq-2-btn">
+                  Do I need technical skills to use it?
+                  <svg class="i" aria-hidden="true"><use href="#i-plus" /></svg>
+                </button>
+              </h3>
+              <div class="acc__panel" id="faq-2" role="region" aria-labelledby="faq-2-btn">
+                <div><p>
+                  No. A guided wizard takes you through the basics, date and venue, seating, tickets and your public
+                  page, and saves your draft as you go.
+                </p></div>
+              </div>
+            </div>
+
+            <div class="acc" data-reveal style="--d: 80ms">
+              <h3>
+                <button type="button" aria-expanded="false" aria-controls="faq-3" id="faq-3-btn">
+                  Can attendees pay with PromptPay?
+                  <svg class="i" aria-hidden="true"><use href="#i-plus" /></svg>
+                </button>
+              </h3>
+              <div class="acc__panel" id="faq-3" role="region" aria-labelledby="faq-3-btn">
+                <div><p>
+                  Yes. Checkout accepts cards and PromptPay through your own Stripe account, and every order comes with
+                  a receipt and a QR ticket.
+                </p></div>
+              </div>
+            </div>
+
+            <div class="acc" data-reveal style="--d: 120ms">
+              <h3>
+                <button type="button" aria-expanded="false" aria-controls="faq-4" id="faq-4-btn">
+                  Can attendees get messages in Thai?
+                  <svg class="i" aria-hidden="true"><use href="#i-plus" /></svg>
+                </button>
+              </h3>
+              <div class="acc__panel" id="faq-4" role="region" aria-labelledby="faq-4-btn">
+                <div><p>
+                  Yes. Confirmations, reminders and receipts go out in Thai or English, prices are shown in Baht and
+                  times in Bangkok time. The organizer console itself is in English for now.
+                </p></div>
+              </div>
+            </div>
+
+            <div class="acc" data-reveal style="--d: 160ms">
+              <h3>
+                <button type="button" aria-expanded="false" aria-controls="faq-5" id="faq-5-btn">
+                  How does check-in work on the day?
+                  <svg class="i" aria-hidden="true"><use href="#i-plus" /></svg>
+                </button>
+              </h3>
+              <div class="acc__panel" id="faq-5" role="region" aria-labelledby="faq-5-btn">
+                <div><p>
+                  Scan QR tickets with the camera on an Android phone or tablet (or Chrome on a Mac or Chromebook), or
+                  search the list and check people in by hand on any device. Each check-in updates the station's count
+                  straight away.
+                </p></div>
+              </div>
+            </div>
+
+            <div class="acc" data-reveal style="--d: 200ms">
+              <h3>
+                <button type="button" aria-expanded="false" aria-controls="faq-6" id="faq-6-btn">
+                  Can we issue VAT invoices?
+                  <svg class="i" aria-hidden="true"><use href="#i-plus" /></svg>
+                </button>
+              </h3>
+              <div class="acc__panel" id="faq-6" role="region" aria-labelledby="faq-6-btn">
+                <div><p>
+                  Yes. Ticket prices include 7% VAT. You can issue, download and void tax invoices, and a monthly VAT
+                  ledger is ready for filing.
+                </p></div>
+              </div>
+            </div>
+
+            <div class="acc" data-reveal style="--d: 240ms">
+              <h3>
+                <button type="button" aria-expanded="false" aria-controls="faq-7" id="faq-7-btn">
+                  Is attendee data secure?
+                  <svg class="i" aria-hidden="true"><use href="#i-plus" /></svg>
+                </button>
+              </h3>
+              <div class="acc__panel" id="faq-7" role="region" aria-labelledby="faq-7-btn">
+                <div><p>
+                  Card details go straight to Stripe and never touch Eventa. Teammates see only what their role allows,
+                  two-factor sign-in is available, and sensitive actions are recorded in an audit log.
+                </p></div>
+              </div>
+            </div>
+
+            <div class="acc" data-reveal style="--d: 280ms">
+              <h3>
+                <button type="button" aria-expanded="false" aria-controls="faq-8" id="faq-8-btn">
+                  Is there a free plan?
+                  <svg class="i" aria-hidden="true"><use href="#i-plus" /></svg>
+                </button>
+              </h3>
+              <!-- PLACEHOLDER (pricing): this answer follows the placeholder plans above. -->
+              <div class="acc__panel" id="faq-8" role="region" aria-labelledby="faq-8-btn">
+                <div><p>
+                  Yes. Starter is free for free events. Business adds paid tickets, reserved seating, discount codes and
+                  finance tools.
+                </p></div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- ============================== CLOSING CTA ============================== -->
+      <section class="section cta" id="get-started" aria-labelledby="cta-title">
+        <div class="container">
+          <div class="cta__panel">
+            <h2 class="h2" id="cta-title" data-reveal>Ready To Run Your Next Event?</h2>
+            <p data-reveal style="--d: 80ms">
+              Create your first event with the guided setup, then sell tickets by card or PromptPay and check guests
+              in with a QR scan.
+            </p>
+            <div class="cta__actions" data-reveal style="--d: 160ms">
+              <a class="btn btn--dark" href="#signup">
+                Start for free
+                <span class="btn__icon"><svg class="i" aria-hidden="true"><use href="#i-arrow-up-right" /></svg></span>
+              </a>
+              <a class="btn btn--outline" href="#pricing">See pricing</a>
+            </div>
+          </div>
+        </div>
+      </section>
+    </main>
+
+    <!-- ============================== FOOTER ============================== -->
+    <footer class="footer">
+      <div class="container footer__grid">
+        <div class="footer__brand">
+          <a class="brand" href="#top" aria-label="Eventa home">
+            <img class="brand__mark" src="assets/logo-mark.svg" alt="" width="34" height="19" />
+            <span class="brand__word">Eventa</span>
+          </a>
+          <p>The all-in-one platform to plan, sell and run events in Thailand.</p>
+        </div>
+
+        <nav class="footer__col" aria-label="Product">
+          <h2 class="footer__heading">Product</h2>
+          <a href="#features">Features</a>
+          <a href="#pricing">Pricing</a>
+          <a href="#faq">FAQ</a>
+        </nav>
+        <nav class="footer__col" aria-label="Solutions">
+          <h2 class="footer__heading">Solutions</h2>
+          <a href="#solutions">Conferences</a>
+          <a href="#solutions">Concerts &amp; venues</a>
+          <a href="#solutions">Workshops &amp; meetups</a>
+        </nav>
+        <nav class="footer__col" aria-label="Company">
+          <h2 class="footer__heading">Company</h2>
+          <a href="#about">About</a>
+          <a href="#careers">Careers</a>
+          <a href="#contact">Contact</a>
+        </nav>
+        <div class="footer__col footer__contact">
+          <h2 class="footer__heading">Get in touch</h2>
+          <p class="footer__small">Questions about Eventa? We reply in Thai or English.</p>
+          <div class="socials">
+            <a href="#facebook" aria-label="Eventa on Facebook"><svg class="i" aria-hidden="true"><use href="#i-facebook" /></svg></a>
+            <a href="#instagram" aria-label="Eventa on Instagram"><svg class="i" aria-hidden="true"><use href="#i-instagram" /></svg></a>
+            <a href="#linkedin" aria-label="Eventa on LinkedIn"><svg class="i" aria-hidden="true"><use href="#i-linkedin" /></svg></a>
+            <a href="#youtube" aria-label="Eventa on YouTube"><svg class="i" aria-hidden="true"><use href="#i-youtube" /></svg></a>
+          </div>
+        </div>
+      </div>
+
+      <div class="container footer__bottom">
+        <p>© <span data-year>2026</span> Eventa. All rights reserved. Product screens show sample data.</p>
+        <div class="footer__legal">
+          <a href="#privacy">Privacy policy</a>
+          <a href="#terms">Terms of service</a>
+        </div>
+      </div>
+      <div class="footer__word" aria-hidden="true">eventa</div>
+    </footer>
+  </body>
+</html>
