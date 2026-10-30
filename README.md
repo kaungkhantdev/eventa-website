@@ -33,35 +33,6 @@ The sections, top to bottom:
 - closing call to action (`#get-started`)
 - footer
 
-## Product screenshots
-
-Every product picture is a capture of
-[eventa-ui-kit](https://github.com/kaungkhantdev/eventa-ui-kit), the visual source of
-truth. They are not drawings of the app. The data in them is the kit's sample data, and
-the footer says so.
-
-| File in `assets/shots/` | Kit page and viewport | What it shows |
-| --- | --- | --- |
-| `hero` | `admin/dashboard.html` · 1280×800 | The Dashboard, with the icon rail |
-| `hero-mobile` | `admin/dashboard.html` · 390×844, phone layout | The same Dashboard. The page uses it at 720px and below |
-| `feature-sales` | `admin/tickets.html` · 1440×900 | Four ticket types with their sales progress |
-| `feature-attendees` | `admin/attendees.html` · 1440×900 | Attendee tabs, search and the first five rows |
-| `feature-messaging` | `admin/messaging-templates.html` · 760×900 | Four automated message templates |
-| `solution-conferences` | `admin/event-detail.html` · 760×1100, Agenda tab | The Tech Summit 2026 agenda |
-| `solution-concerts` | `portal/register.html` · 760×1100 | The buyer's seat picker with two seats picked |
-| `solution-workshops` | `admin/registrations.html` · 1000×900, Pending tab | Five pending registrations with approve and decline |
-| `solution-workshops-survey` | `admin/feedback-detail.html` · 1440×900 | The "Overall satisfaction" survey card |
-
-When you refresh one, keep it consistent with the rest:
-
-- **Light theme**, with fonts, icons and charts fully loaded. Animations are off, and there
-  are no hover, caret or focus marks.
-- **Render each density at that density** (device scale factor 1, 2 or 3). Never scale a 2x
-  file down to make the 1x.
-- **No real-looking personal data.** Before capture, change emails to `…@example.com` and
-  phone numbers to dummy ones such as `+66 81 234 5678`. Change the page in the browser,
-  not the kit's files.
-- **Update the `<img>` too.** Its `width`, `height` and `srcset` follow the image's 1x size.
 
 ## How the page behaves
 
