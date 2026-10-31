@@ -3,16 +3,16 @@
   <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <title>Eventa — Plan, sell and run events in Thailand</title>
+    <title>Eventa — Plan, sell and run events</title>
     <meta
       name="description"
       content="Eventa brings event pages, tickets, reserved seating, card and PromptPay checkout, QR check-in, attendee messaging, VAT invoices and reports into one workspace."
     />
     <meta name="theme-color" content="#00c066" />
-    <meta property="og:title" content="Eventa — Plan, sell and run events in Thailand" />
+    <meta property="og:title" content="Eventa — Plan, sell and run events" />
     <meta
       property="og:description"
-      content="Tickets, seating, payments, check-in and messaging in one workspace, with PromptPay and attendee messages in Thai or English."
+      content="Tickets, seating, PromptPay and card payments, check-in and attendee messages, all in one workspace."
     />
     <meta property="og:type" content="website" />
     <link rel="icon" type="image/svg+xml" href="assets/favicon.svg" />
@@ -47,7 +47,17 @@
       <!-- Section label icons. -->
       <symbol id="i-sparkle" viewBox="0 0 24 24"><path d="M12 3.5c.5 4.4 2.1 6 6.5 6.5-4.4.5-6 2.1-6.5 6.5-.5-4.4-2.1-6-6.5-6.5 4.4-.5 6-2.1 6.5-6.5Z" /><path d="M18.5 16.5c.2 1.6.8 2.2 2.4 2.4-1.6.2-2.2.8-2.4 2.4-.2-1.6-.8-2.2-2.4-2.4 1.6-.2 2.2-.8 2.4-2.4Z" /></symbol>
       <symbol id="i-grid" viewBox="0 0 24 24"><rect x="4" y="4" width="6.5" height="6.5" rx="1.8" /><rect x="13.5" y="4" width="6.5" height="6.5" rx="1.8" /><rect x="4" y="13.5" width="6.5" height="6.5" rx="1.8" /><rect x="13.5" y="13.5" width="6.5" height="6.5" rx="1.8" /></symbol>
-      <symbol id="i-tag" viewBox="0 0 24 24"><path d="M3.5 12.4V5.5a2 2 0 0 1 2-2h6.9a2 2 0 0 1 1.4.6l6.6 6.6a2 2 0 0 1 0 2.8l-6.9 6.9a2 2 0 0 1-2.8 0l-6.6-6.6a2 2 0 0 1-.6-1.4Z" /><path stroke-width="2.4" d="M8 8h.01" /></symbol>
+      <!-- Platform icons. -->
+      <symbol id="i-layers" viewBox="0 0 24 24"><path d="m12 3.5 8.5 4.25L12 12 3.5 7.75 12 3.5Z" /><path d="m3.5 12 8.5 4.25L20.5 12M3.5 16.25 12 20.5l8.5-4.25" /></symbol>
+      <symbol id="i-layout" viewBox="0 0 24 24"><rect x="3.5" y="4" width="17" height="16" rx="3" /><path d="M3.5 9h17M9.5 9v11" /></symbol>
+      <symbol id="i-seat" viewBox="0 0 24 24"><path d="M6.5 11V6.5A2.5 2.5 0 0 1 9 4h6a2.5 2.5 0 0 1 2.5 2.5V11" /><path d="M4.5 11a1.5 1.5 0 0 1 3 0v2h9v-2a1.5 1.5 0 0 1 3 0v4a2 2 0 0 1-2 2h-11a2 2 0 0 1-2-2v-4ZM7 17v3M17 17v3" /></symbol>
+      <symbol id="i-card" viewBox="0 0 24 24"><rect x="3" y="5.5" width="18" height="13" rx="2.5" /><path d="M3 10h18M7 14.5h3" /></symbol>
+      <symbol id="i-scan" viewBox="0 0 24 24"><path d="M4 8V6a2 2 0 0 1 2-2h2M16 4h2a2 2 0 0 1 2 2v2M20 16v2a2 2 0 0 1-2 2h-2M8 20H6a2 2 0 0 1-2-2v-2M4 12h16" /></symbol>
+      <symbol id="i-chat" viewBox="0 0 24 24"><path d="M20 11.5a7.5 7.5 0 0 1-10.9 6.7L4.5 19.5l1.3-4.2A7.5 7.5 0 1 1 20 11.5Z" /><path d="M9 11.5h.01M12.5 11.5h.01M16 11.5h.01" stroke-width="2.4" /></symbol>
+      <symbol id="i-video" viewBox="0 0 24 24"><rect x="3" y="6" width="12.5" height="12" rx="2.5" /><path d="m15.5 10.5 5-3v9l-5-3" /></symbol>
+      <symbol id="i-receipt" viewBox="0 0 24 24"><path d="M6 3.5h12v17l-2.5-1.5-2 1.5-1.5-1.5-1.5 1.5-2-1.5L6 20.5v-17Z" /><path d="M9.5 8h5M9.5 11.5h5M9.5 15h3" /></symbol>
+      <symbol id="i-chart" viewBox="0 0 24 24"><path d="M4 20h16M7 16.5V11M12 16.5V6M17 16.5v-8" /></symbol>
+      <symbol id="i-users" viewBox="0 0 24 24"><circle cx="9" cy="8.5" r="3.5" /><path d="M3 19.5a6 6 0 0 1 12 0M15.5 5.2a3.5 3.5 0 0 1 0 6.6M17.5 14a6 6 0 0 1 3.5 5.5" /></symbol>
       <symbol id="i-calendar" viewBox="0 0 24 24"><rect x="3.5" y="5" width="17" height="15.5" rx="3" /><path d="M3.5 10h17M8 3v4M16 3v4" /></symbol>
       <symbol id="i-check-circle" viewBox="0 0 24 24"><circle cx="12" cy="12" r="8.5" /><path d="m8.6 12.3 2.3 2.3 4.6-4.9" /></symbol>
       <symbol id="i-help" viewBox="0 0 24 24"><circle cx="12" cy="12" r="8.5" /><path d="M9.7 9.6a2.4 2.4 0 1 1 3.3 2.2c-.6.3-1 .8-1 1.5v.4" /><path stroke-width="2.4" d="M12 16.9h.01" /></symbol>
@@ -70,6 +80,14 @@
 
     <a class="skip-link" href="#main">Skip to content</a>
 
+    <!-- PLACEHOLDER (beta notice): remove this bar at launch, and set --bar-h to 0px
+         in css/styles.css. -->
+    <div class="beta-bar" role="note">
+      <span class="beta-bar__tag">Beta</span>
+      <span class="beta-bar__long">Eventa is in beta. This site is a test version, not the live service.</span>
+      <span class="beta-bar__short">A test version, not the live service.</span>
+    </div>
+
     <!-- ============================== NAV ============================== -->
     <!-- PLACEHOLDER LINKS across the page: #login, #signup, #about, #careers, the
          social links, #privacy and #terms have no target yet. Point them at the
@@ -84,13 +102,13 @@
         <nav class="nav__links" aria-label="Primary">
           <a href="#features">Features</a>
           <a href="#solutions">Solutions</a>
-          <a href="#pricing">Pricing</a>
+          <a href="#platform">Platform</a>
           <a href="#faq">FAQ</a>
         </nav>
 
         <div class="nav__actions">
           <a class="nav__login" href="#login">Log in</a>
-          <a class="btn btn--dark btn--sm" href="#pricing">Start for free</a>
+          <a class="btn btn--dark btn--sm" href="#signup">Start for free</a>
           <button class="nav__toggle" type="button" aria-expanded="false" aria-controls="mobile-menu" data-menu-toggle>
             <span class="sr-only">Open menu</span>
             <svg class="i i--lg" aria-hidden="true"><use href="#i-menu" /></svg>
@@ -102,11 +120,11 @@
         <nav class="mobile-menu__inner" aria-label="Mobile">
           <a href="#features">Features</a>
           <a href="#solutions">Solutions</a>
-          <a href="#pricing">Pricing</a>
+          <a href="#platform">Platform</a>
           <a href="#faq">FAQ</a>
           <div class="mobile-menu__ctas">
             <a class="btn btn--light" href="#login">Log in</a>
-            <a class="btn btn--dark" href="#pricing">Start for free</a>
+            <a class="btn btn--dark" href="#signup">Start for free</a>
           </div>
         </nav>
       </div>
@@ -115,8 +133,8 @@
     <main id="main">
       <!-- ============================== HERO ============================== -->
       <section class="hero" id="top">
-        <!-- One inset deep-green card below the nav: the copy, then the product
-             window, which sinks into the card's bottom edge. -->
+        <!-- One inset deep-green card below the nav, holding the copy. Its bottom
+             edge runs behind the product window below, 70% of the way down. -->
         <div class="hero__panel has-grain">
           <div class="container hero__copy">
             <a class="pill-badge" href="#solutions" data-reveal>
@@ -130,44 +148,45 @@
             </h1>
 
             <p class="hero__lead" data-reveal style="--d: 160ms">
-              Tickets, seating, PromptPay and card payments, <span style="white-space: nowrap">check-in</span> and attendee messages in Thai or English&nbsp;— in
-              one workspace built for organizers in Thailand.
+              Tickets, seating, PromptPay and card payments, <span style="white-space: nowrap">check-in</span> and attendee messages, all
+              in one workspace built for event organizers.
             </p>
 
             <div class="hero__ctas" data-reveal style="--d: 240ms">
-              <a class="btn btn--light" href="#pricing">
+              <a class="btn btn--light" href="#signup">
                 Start for free
                 <span class="btn__icon"><svg class="i" aria-hidden="true"><use href="#i-arrow-up-right" /></svg></span>
               </a>
               <a class="btn btn--glass" href="#features">See how it works</a>
             </div>
           </div>
+        </div>
 
-          <!-- The real product: the Eventa dashboard as captured from the UI kit
-               (sample data), in a frosted frame. Phones get the kit's own phone
-               layout of the same screen. -->
-          <div class="container hero__showcase">
-            <div class="hero__stage" data-reveal="zoom" style="--d: 380ms">
-              <div class="hero__frame">
-                <div class="shot-window hero__shot">
-                  <picture>
-                    <source
-                      media="(max-width: 720px)"
-                      srcset="assets/shots/hero-mobile@1x.webp 1x, assets/shots/hero-mobile@2x.webp 2x, assets/shots/hero-mobile@3x.webp 3x"
-                      width="390"
-                      height="844"
-                    />
-                    <img
-                      src="assets/shots/hero@1x.webp"
-                      srcset="assets/shots/hero@1x.webp 1x, assets/shots/hero@2x.webp 2x"
-                      width="1280"
-                      height="790"
-                      fetchpriority="high"
-                      decoding="async"
-                      alt="The Eventa dashboard: 1,340 registrations, ฿48.29k in ticket revenue, 12 upcoming events, an 87% check-in rate and 78% of capacity filled."
-                    />
-                  </picture>
-                </div>
+        <!-- The real product: the Eventa dashboard as captured from the UI kit
+             (sample data), in a frosted frame. Pulled up so 70% of it sits on the
+             green card and 30% on the page. Phones get the kit's own phone layout
+             of the screen. -->
+        <div class="container hero__showcase">
+          <div class="hero__stage" data-reveal="zoom" style="--d: 380ms">
+            <div class="hero__frame">
+              <div class="shot-window hero__shot">
+                <picture>
+                  <source
+                    media="(max-width: 720px)"
+                    srcset="assets/shots/hero-mobile@1x.webp 1x, assets/shots/hero-mobile@2x.webp 2x, assets/shots/hero-mobile@3x.webp 3x"
+                    width="390"
+                    height="844"
+                  />
+                  <img
+                    src="assets/shots/hero@1x.webp"
+                    srcset="assets/shots/hero@1x.webp 1x, assets/shots/hero@2x.webp 2x"
+                    width="1280"
+                    height="790"
+                    fetchpriority="high"
+                    decoding="async"
+                    alt="The Eventa dashboard: 1,340 registrations, ฿48.29k in ticket revenue, 12 upcoming events, an 87% check-in rate and 78% of capacity filled."
+                  />
+                </picture>
               </div>
             </div>
           </div>
@@ -293,7 +312,7 @@
                 <li><svg class="i" aria-hidden="true"><use href="#i-check" /></svg>Agenda, sessions and speaker line-up</li>
                 <li><svg class="i" aria-hidden="true"><use href="#i-check" /></svg>Share links, social buttons and a printable QR flyer</li>
               </ul>
-              <a class="btn btn--dark" href="#pricing">Plan your conference</a>
+              <a class="btn btn--dark" href="#signup">Plan your conference</a>
             </div>
 
             <div class="spotlight__visual" data-reveal="right">
@@ -330,7 +349,7 @@
                 <li><svg class="i" aria-hidden="true"><use href="#i-check" /></svg>Reserved seating, up to 8 seats per booking</li>
                 <li><svg class="i" aria-hidden="true"><use href="#i-check" /></svg>QR ticket scanning at the door</li>
               </ul>
-              <a class="btn btn--dark" href="#pricing">Set up your venue</a>
+              <a class="btn btn--dark" href="#signup">Set up your venue</a>
             </div>
 
             <div class="spotlight__visual" data-reveal="left">
@@ -369,7 +388,7 @@
                 <li><svg class="i" aria-hidden="true"><use href="#i-check" /></svg>Approval queue and waitlists</li>
                 <li><svg class="i" aria-hidden="true"><use href="#i-check" /></svg>Post-event surveys and ratings</li>
               </ul>
-              <a class="btn btn--dark" href="#pricing">Run your workshop</a>
+              <a class="btn btn--dark" href="#signup">Run your workshop</a>
             </div>
 
             <div class="spotlight__visual spotlight__visual--pair" data-reveal="right">
@@ -406,73 +425,81 @@
         </div>
       </section>
 
-      <!-- ============================== PRICING ============================== -->
-      <!-- PLACEHOLDER PLANS: tiers, limits, trial length, yearly discount and prices are
-           not defined in eventa-docs yet. Replace before launch, together with FAQ
-           "Is there a free plan?". -->
-      <section class="section" id="pricing">
+      <!-- ============================== PLATFORM ============================== -->
+      <!-- Everything Eventa does, one card each. Every card follows a user story in
+           eventa-docs (01-requirements-and-features/functional-requirements.md). -->
+      <section class="section" id="platform">
         <div class="container">
           <div class="center-head">
-            <span class="eyebrow" data-reveal><span class="eyebrow__icon"><svg class="i" aria-hidden="true"><use href="#i-tag" /></svg></span>Pricing</span>
-            <h2 class="h2" data-reveal style="--d: 60ms">Flexible Plans That Grow With You</h2>
+            <span class="eyebrow" data-reveal><span class="eyebrow__icon"><svg class="i" aria-hidden="true"><use href="#i-layers" /></svg></span>Platform</span>
+            <h2 class="h2" data-reveal style="--d: 60ms">Everything Your Event Needs, In One Place</h2>
             <p data-reveal style="--d: 120ms">
-              Start free and upgrade as your events grow. Every plan includes event pages, QR tickets and check-in.
+              Twelve tools that work together, from the first ticket to the final report.
             </p>
-
-            <div class="billing" data-reveal style="--d: 180ms">
-              <span id="bill-monthly">Monthly</span>
-              <button class="switch" type="button" role="switch" aria-checked="false" aria-labelledby="bill-yearly" data-billing>
-                <span class="switch__knob"></span>
-              </button>
-              <span id="bill-yearly">Yearly</span>
-              <span class="save-chip">Save 20%</span>
-            </div>
           </div>
 
-          <div class="plans">
-            <article class="plan" data-reveal="left">
-              <header class="plan__head">
-                <h3>Starter</h3>
-                <p>For free events, meetups and your first launch.</p>
-                <div class="plan__price"><b>฿0</b><span>forever</span></div>
-                <a class="btn btn--outline btn--block" href="#signup">Get started</a>
-              </header>
-              <ul class="plan__list">
-                <li><svg class="i" aria-hidden="true"><use href="#i-check" /></svg>Unlimited free events and RSVPs</li>
-                <li><svg class="i" aria-hidden="true"><use href="#i-check" /></svg>Event pages from 4 templates</li>
-                <li><svg class="i" aria-hidden="true"><use href="#i-check" /></svg>QR tickets and check-in</li>
-                <li><svg class="i" aria-hidden="true"><use href="#i-check" /></svg>Confirmation and reminder emails</li>
-                <li><svg class="i" aria-hidden="true"><use href="#i-check" /></svg>Attendee directory and registration reports</li>
-                <li><svg class="i" aria-hidden="true"><use href="#i-check" /></svg>Up to 2 teammates</li>
-              </ul>
-            </article>
-
-            <article class="plan plan--featured" data-reveal="right">
-              <header class="plan__head has-grain">
-                <div class="plan__title-row">
-                  <h3>Business</h3>
-                  <span class="plan__badge">Most popular</span>
-                </div>
-                <p>For teams selling paid tickets every month.</p>
-                <div class="plan__price">
-                  <b data-price data-monthly="฿2,590" data-yearly="฿2,070">฿2,590</b>
-                  <span data-price-note data-monthly="per month" data-yearly="per month, billed yearly">per month</span>
-                </div>
-                <a class="btn btn--light btn--block" href="#signup">Start 30-day trial</a>
-              </header>
-              <ul class="plan__list">
-                <li><svg class="i" aria-hidden="true"><use href="#i-check" /></svg>Everything in Starter</li>
-                <li><svg class="i" aria-hidden="true"><use href="#i-check" /></svg>Paid tickets with card and PromptPay</li>
-                <li><svg class="i" aria-hidden="true"><use href="#i-check" /></svg>Reserved seating and seat maps</li>
-                <li><svg class="i" aria-hidden="true"><use href="#i-check" /></svg>Discount codes and waitlists</li>
-                <li><svg class="i" aria-hidden="true"><use href="#i-check" /></svg>VAT invoices, refunds and payout balances</li>
-                <li><svg class="i" aria-hidden="true"><use href="#i-check" /></svg>Announcements and message templates</li>
-                <li><svg class="i" aria-hidden="true"><use href="#i-check" /></svg>Reports with CSV, Excel and PDF export</li>
-                <li><svg class="i" aria-hidden="true"><use href="#i-check" /></svg>Google Calendar meetings</li>
-                <li><svg class="i" aria-hidden="true"><use href="#i-check" /></svg>Custom roles and an audit log</li>
-              </ul>
-            </article>
-          </div>
+          <ul class="tools">
+            <li class="tool" data-reveal style="--d: 0ms">
+              <span class="tool__icon tool__icon--1"><svg class="i" aria-hidden="true"><use href="#i-layout" /></svg></span>
+              <h3>Event Pages</h3>
+              <p>A polished event page from four templates, live under one link.</p>
+            </li>
+            <li class="tool" data-reveal style="--d: 70ms">
+              <span class="tool__icon tool__icon--2"><svg class="i" aria-hidden="true"><use href="#i-ticket" /></svg></span>
+              <h3>Tickets &amp; Discounts</h3>
+              <p>Free or paid tickets that open and sell out on their own, plus discount codes.</p>
+            </li>
+            <li class="tool" data-reveal style="--d: 140ms">
+              <span class="tool__icon tool__icon--3"><svg class="i" aria-hidden="true"><use href="#i-seat" /></svg></span>
+              <h3>Reserved Seating</h3>
+              <p>Set out your rows once. Buyers pick their own seats.</p>
+            </li>
+            <li class="tool" data-reveal style="--d: 0ms">
+              <span class="tool__icon tool__icon--4"><svg class="i" aria-hidden="true"><use href="#i-card" /></svg></span>
+              <h3>Card &amp; PromptPay</h3>
+              <p>Get paid by card or PromptPay, and refund in a few clicks.</p>
+            </li>
+            <li class="tool" data-reveal style="--d: 70ms">
+              <span class="tool__icon tool__icon--5"><svg class="i" aria-hidden="true"><use href="#i-check-circle" /></svg></span>
+              <h3>Registrations</h3>
+              <p>Approve sign-ups by hand and move people up from the waitlist.</p>
+            </li>
+            <li class="tool" data-reveal style="--d: 140ms">
+              <span class="tool__icon tool__icon--6"><svg class="i" aria-hidden="true"><use href="#i-scan" /></svg></span>
+              <h3>QR Check-in</h3>
+              <p>Scan tickets at the door and watch turnout as it happens.</p>
+            </li>
+            <li class="tool" data-reveal style="--d: 0ms">
+              <span class="tool__icon tool__icon--7"><svg class="i" aria-hidden="true"><use href="#i-chat" /></svg></span>
+              <h3>Messaging</h3>
+              <p>Confirmations, reminders and announcements, sent at the right moment.</p>
+            </li>
+            <li class="tool" data-reveal style="--d: 70ms">
+              <span class="tool__icon tool__icon--8"><svg class="i" aria-hidden="true"><use href="#i-calendar" /></svg></span>
+              <h3>Agenda &amp; Speakers</h3>
+              <p>Build the programme without ever double-booking a room.</p>
+            </li>
+            <li class="tool" data-reveal style="--d: 140ms">
+              <span class="tool__icon tool__icon--9"><svg class="i" aria-hidden="true"><use href="#i-video" /></svg></span>
+              <h3>Meetings</h3>
+              <p>Calendar invites and Google Meet links, sent for you.</p>
+            </li>
+            <li class="tool" data-reveal style="--d: 0ms">
+              <span class="tool__icon tool__icon--10"><svg class="i" aria-hidden="true"><use href="#i-receipt" /></svg></span>
+              <h3>Finance &amp; VAT</h3>
+              <p>VAT invoices, payouts and a monthly VAT ledger, always in order.</p>
+            </li>
+            <li class="tool" data-reveal style="--d: 70ms">
+              <span class="tool__icon tool__icon--11"><svg class="i" aria-hidden="true"><use href="#i-chart" /></svg></span>
+              <h3>Reports</h3>
+              <p>Revenue, registrations and turnout, exported to CSV, Excel or PDF.</p>
+            </li>
+            <li class="tool" data-reveal style="--d: 140ms">
+              <span class="tool__icon tool__icon--12"><svg class="i" aria-hidden="true"><use href="#i-users" /></svg></span>
+              <h3>Team &amp; Roles</h3>
+              <p>Invite your team and decide exactly what each role can do.</p>
+            </li>
+          </ul>
         </div>
       </section>
 
@@ -491,7 +518,7 @@
                 <i class="avatar" style="--h: 152">M</i><i class="avatar" style="--h: 205">T</i><i class="avatar" style="--h: 38">K</i>
               </div>
               <b>Still have questions?</b>
-              <p>Our team answers in Thai or English.</p>
+              <p>Send us a message and we'll get back to you.</p>
               <!-- PLACEHOLDER LINK: point at the real contact channel (email or LINE OA) before launch. -->
               <a class="btn btn--dark btn--sm" href="#contact">Contact our team</a>
             </div>
@@ -507,7 +534,7 @@
               </h3>
               <div class="acc__panel" id="faq-1" role="region" aria-labelledby="faq-1-btn">
                 <div><p>
-                  Eventa is an event registration and management platform for organizers in Thailand: conference teams,
+                  Eventa is an event registration and management platform for organizers: conference teams,
                   venues, agencies and community hosts. One workspace covers event pages, tickets, seating, payments,
                   check-in, messaging, finance and reports.
                 </p></div>
@@ -540,21 +567,6 @@
                 <div><p>
                   Yes. Checkout accepts cards and PromptPay through your own Stripe account, and every order comes with
                   a receipt and a QR ticket.
-                </p></div>
-              </div>
-            </div>
-
-            <div class="acc" data-reveal style="--d: 120ms">
-              <h3>
-                <button type="button" aria-expanded="false" aria-controls="faq-4" id="faq-4-btn">
-                  Can attendees get messages in Thai?
-                  <svg class="i" aria-hidden="true"><use href="#i-plus" /></svg>
-                </button>
-              </h3>
-              <div class="acc__panel" id="faq-4" role="region" aria-labelledby="faq-4-btn">
-                <div><p>
-                  Yes. Confirmations, reminders and receipts go out in Thai or English, prices are shown in Baht and
-                  times in Bangkok time. The organizer console itself is in English for now.
                 </p></div>
               </div>
             </div>
@@ -604,22 +616,6 @@
                 </p></div>
               </div>
             </div>
-
-            <div class="acc" data-reveal style="--d: 280ms">
-              <h3>
-                <button type="button" aria-expanded="false" aria-controls="faq-8" id="faq-8-btn">
-                  Is there a free plan?
-                  <svg class="i" aria-hidden="true"><use href="#i-plus" /></svg>
-                </button>
-              </h3>
-              <!-- PLACEHOLDER (pricing): this answer follows the placeholder plans above. -->
-              <div class="acc__panel" id="faq-8" role="region" aria-labelledby="faq-8-btn">
-                <div><p>
-                  Yes. Starter is free for free events. Business adds paid tickets, reserved seating, discount codes and
-                  finance tools.
-                </p></div>
-              </div>
-            </div>
           </div>
         </div>
       </section>
@@ -638,7 +634,7 @@
                 Start for free
                 <span class="btn__icon"><svg class="i" aria-hidden="true"><use href="#i-arrow-up-right" /></svg></span>
               </a>
-              <a class="btn btn--outline" href="#pricing">See pricing</a>
+              <a class="btn btn--outline" href="#platform">See all features</a>
             </div>
           </div>
         </div>
@@ -653,13 +649,13 @@
             <img class="brand__mark" src="assets/logo-mark.svg" alt="" width="34" height="19" />
             <span class="brand__word">Eventa</span>
           </a>
-          <p>The all-in-one platform to plan, sell and run events in Thailand.</p>
+          <p>The all-in-one platform to plan, sell and run events.</p>
         </div>
 
         <nav class="footer__col" aria-label="Product">
           <h2 class="footer__heading">Product</h2>
           <a href="#features">Features</a>
-          <a href="#pricing">Pricing</a>
+          <a href="#platform">Platform</a>
           <a href="#faq">FAQ</a>
         </nav>
         <nav class="footer__col" aria-label="Solutions">
@@ -676,7 +672,7 @@
         </nav>
         <div class="footer__col footer__contact">
           <h2 class="footer__heading">Get in touch</h2>
-          <p class="footer__small">Questions about Eventa? We reply in Thai or English.</p>
+          <p class="footer__small">Questions about Eventa? We're happy to help.</p>
           <div class="socials">
             <a href="#facebook" aria-label="Eventa on Facebook"><svg class="i" aria-hidden="true"><use href="#i-facebook" /></svg></a>
             <a href="#instagram" aria-label="Eventa on Instagram"><svg class="i" aria-hidden="true"><use href="#i-instagram" /></svg></a>

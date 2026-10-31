@@ -12,7 +12,7 @@
   --brand-soft: #e6f9f0;
   --brand-50: #f2fcf7;
 
-  /* The deep-green surface (hero panel, featured plan). */
+  /* The deep-green surface (the hero card). */
   --deep-900: #022b1b;
   --deep-800: #03472b;
   --deep-700: #035a35;
@@ -45,7 +45,9 @@
     0 48px 96px -32px rgb(2 30 18 / 0.3);
 
   --ease: cubic-bezier(0.22, 1, 0.36, 1);
-  --nav-h: 76px;
+  /* --nav-h is the whole fixed header: the beta bar plus the nav. */
+  --bar-h: 34px;
+  --nav-h: calc(76px + var(--bar-h));
   color-scheme: light;
 }
 
@@ -113,15 +115,14 @@ ul {
 }
 
 /* A dark ring reads on white, mint and the brighter greens; the deep-green
-   surfaces (the hero card and the featured plan) switch it to white. */
+   surface (the hero card) switches it to white. */
 :focus-visible {
   outline: 2.5px solid var(--ink-900);
   outline-offset: 3px;
   border-radius: 8px;
 }
 
-.hero__panel :focus-visible,
-.plan--featured :focus-visible {
+.hero__panel :focus-visible {
   outline-color: #fff;
 }
 
@@ -169,7 +170,7 @@ footer {
 }
 
 .skip-link:focus {
-  top: 12px;
+  top: calc(var(--bar-h) + 10px);
 }
 
 /* A white ring with a dark edge, so it shows on the green hero and on white. */
@@ -388,9 +389,41 @@ footer {
 /* ==========================================================================
    NAV
    ========================================================================== */
-.nav {
+/* ---------- Beta notice ----------
+   A slim dark strip fixed above the nav. Phones get the short sentence. */
+.beta-bar {
   position: fixed;
   inset: 0 0 auto;
+  z-index: 51;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+  height: var(--bar-h);
+  padding: 0 16px;
+  background: var(--ink-900);
+  color: #d7e6df;
+  font-size: 13px;
+  white-space: nowrap;
+}
+
+.beta-bar__tag {
+  padding: 2px 8px;
+  border-radius: 999px;
+  background: var(--brand);
+  color: var(--ink-900);
+  font-size: 11.5px;
+  font-weight: 700;
+  letter-spacing: 0.02em;
+}
+
+.beta-bar__short {
+  display: none;
+}
+
+.nav {
+  position: fixed;
+  inset: var(--bar-h) 0 auto;
   z-index: 50;
   padding: 14px 0;
   transition:
@@ -611,30 +644,61 @@ html:not(.js) .nav,
 /* ==========================================================================
    HERO
    ========================================================================== */
-/* The nav sits on the white page; the hero is an inset card below it.
+/* The nav sits on the white page; the hero is an inset card below it. The
+   framed product window is pulled up so the card's bottom edge runs behind
+   it 70% of the way down: 70% on the green, 30% on the page.
    --hero-gap: space between the copy and the product window.
-   --hero-sink: how much of the window hides below the card's bottom edge, as a
-   share of its width (the window is 1280 x 790, so 17% is about a quarter of
-   its height: the charts stay, the tables below them go). */
+   --hero-overlap: 70% of the frame's height. The frame is as wide as the
+   container (100% less 48px of padding, at most 1152px); inside it, 22px of
+   padding and border hold the 1280 x 790 capture. That works out to 43.2% of
+   the width less 14.84px, at most 503.6px. (Margin and padding percentages
+   are shares of the width.) */
 .hero {
   --hero-gap: 64px;
-  --hero-sink: 17%;
+  --hero-overlap: min(503.6px, 43.2% - 14.84px);
   padding-top: var(--nav-h);
 }
 
 /* One calm, static deep-green card: a base gradient, one wide soft light
    above the headline and a faint teal corner. The film grain (.has-grain)
-   keeps every gradient smooth. It clips the window at its bottom edge. */
+   keeps every gradient smooth. Toward the bottom the base gradient itself
+   runs into the page white, so the card has no bottom edge: 17 steps mixed in
+   OKLab (green to white with no grey middle) and spaced on a smootherstep
+   curve, so neither the start nor the end of the fade shows as a line. The
+   window sits above the card, so it stays sharp. --hero-fade is how tall the
+   fade is. */
 .hero__panel {
+  --hero-fade: 440px;
   margin: 0 clamp(8px, 1.4vw, 20px);
-  padding-top: 56px;
+  padding: 56px 0 calc(var(--hero-gap) + var(--hero-overlap));
   overflow: hidden;
-  border-radius: var(--radius-xl);
+  border-radius: var(--radius-xl) var(--radius-xl) 0 0;
   color: #fff;
   background:
     radial-gradient(1100px 560px at 50% -160px, rgb(134 239 172 / 0.2), rgb(134 239 172 / 0.05) 50%, transparent 72%),
     radial-gradient(560px 420px at 100% 0%, rgb(45 212 191 / 0.1), transparent 70%),
-    linear-gradient(180deg, var(--deep-900) 0%, var(--deep-800) 55%, var(--deep-700) 100%);
+    linear-gradient(
+      180deg,
+      var(--deep-900) 0%,
+      var(--deep-800) calc((100% - var(--hero-fade)) * 0.55),
+      #035a35 calc(100% - var(--hero-fade)),
+      #045a35 calc(100% - var(--hero-fade) * 0.9375),
+      #0c5c38 calc(100% - var(--hero-fade) * 0.8750),
+      #19623e calc(100% - var(--hero-fade) * 0.8125),
+      #2a6a48 calc(100% - var(--hero-fade) * 0.7500),
+      #3e7656 calc(100% - var(--hero-fade) * 0.6875),
+      #548568 calc(100% - var(--hero-fade) * 0.6250),
+      #6d977d calc(100% - var(--hero-fade) * 0.5625),
+      #88aa94 calc(100% - var(--hero-fade) * 0.5000),
+      #a3bdac calc(100% - var(--hero-fade) * 0.4375),
+      #bdcfc3 calc(100% - var(--hero-fade) * 0.3750),
+      #d3e0d8 calc(100% - var(--hero-fade) * 0.3125),
+      #e6ede8 calc(100% - var(--hero-fade) * 0.2500),
+      #f3f6f4 calc(100% - var(--hero-fade) * 0.1875),
+      #fbfcfb calc(100% - var(--hero-fade) * 0.1250),
+      #feffff calc(100% - var(--hero-fade) * 0.0625),
+      #ffffff 100%
+    );
 }
 
 .hero__copy {
@@ -720,7 +784,8 @@ html:not(.js) .nav,
 /* A brand glow behind the top of the window. */
 .hero__showcase {
   position: relative;
-  margin-top: var(--hero-gap);
+  z-index: 1;
+  margin-top: calc(-1 * var(--hero-overlap));
 }
 
 .hero__showcase::before {
@@ -735,33 +800,15 @@ html:not(.js) .nav,
   pointer-events: none;
 }
 
-/* The product window. Its bottom part runs past the card's edge, which
-   clips it. */
+/* The product window, shown whole. */
 .hero__stage {
   position: relative;
   max-width: 1300px;
-  margin: 0 auto calc(-1 * var(--hero-sink));
+  margin: 0 auto;
 }
 
-/* Where the window runs into the card's bottom edge it blurs and fades into
-   the green, so the cut reads as the window sinking away. Phones keep the
-   whole window inside the card, so they don't need it (see RESPONSIVE). */
-.hero__panel::after {
-  content: "";
-  position: absolute;
-  left: 0;
-  right: 0;
-  bottom: 0;
-  height: 170px;
-  background: linear-gradient(180deg, rgb(3 90 53 / 0) 0%, rgb(3 90 53 / 0.55) 55%, rgb(3 90 53 / 0.96) 100%);
-  -webkit-backdrop-filter: blur(6px);
-  backdrop-filter: blur(6px);
-  -webkit-mask-image: linear-gradient(180deg, transparent 0%, #000 65%);
-  mask-image: linear-gradient(180deg, transparent 0%, #000 65%);
-  pointer-events: none;
-}
-
-/* A frosted pane around the screen, like a device bezel made of glass. */
+/* A frosted pane around the screen, like a device bezel made of glass. The
+   faint dark ring keeps its edge visible where it sits on the white page. */
 .hero__frame {
   padding: 10px;
   border-radius: 26px;
@@ -769,7 +816,15 @@ html:not(.js) .nav,
   border: 1px solid rgb(255 255 255 / 0.24);
   -webkit-backdrop-filter: blur(12px);
   backdrop-filter: blur(12px);
-  box-shadow: 0 30px 80px -30px rgb(0 0 0 / 0.45);
+  box-shadow:
+    0 0 0 1px rgb(19 42 34 / 0.06),
+    0 18px 40px -24px rgb(10 40 26 / 0.3);
+}
+
+/* Inside the frame the screen needs no shadow of its own: the frame casts
+   one, and a second wide shadow would leave a grey haze on the white page. */
+.hero__frame .shot-window {
+  box-shadow: none;
 }
 
 /* ---------- Integrations ----------
@@ -1194,201 +1249,66 @@ html:not(.js) .nav,
   margin: calc(-12px * var(--s)) 0 0 calc(-12px * var(--s));
 }
 
-/* ---------- Pricing ---------- */
-.billing {
-  display: inline-flex;
-  align-items: center;
-  gap: 12px;
-  margin-top: 28px;
-  padding: 8px 10px 8px 18px;
-  border-radius: 999px;
-  background: #fff;
-  border: 1px solid var(--line);
-  box-shadow: var(--shadow-sm);
-  font-size: 14.5px;
-  font-weight: 600;
-}
-
-.billing span[id] {
-  color: var(--muted);
-  cursor: pointer;
-  transition: color 0.2s;
-}
-
-.billing.is-monthly #bill-monthly,
-.billing.is-yearly #bill-yearly {
-  color: var(--ink);
-}
-
-.switch {
-  position: relative;
-  width: 50px;
-  height: 28px;
-  border-radius: 999px;
-  background: #7b8494;
-  transition: background-color 0.3s var(--ease);
-}
-
-.switch[aria-checked="true"] {
-  background: var(--brand-700);
-}
-
-.switch__knob {
-  position: absolute;
-  top: 3px;
-  left: 3px;
-  width: 22px;
-  height: 22px;
-  border-radius: 50%;
-  background: #fff;
-  box-shadow: 0 2px 6px rgb(0 0 0 / 0.2);
-  transition: transform 0.35s var(--ease);
-}
-
-.switch[aria-checked="true"] .switch__knob {
-  transform: translateX(22px);
-}
-
-.save-chip {
-  padding: 4px 10px;
-  border-radius: 999px;
-  background: var(--brand-soft);
-  color: var(--brand-800);
-  font-size: 12px;
-}
-
-.plans {
+/* ---------- Platform: everything Eventa does ----------
+   White cards with a soft shadow and no border; each has a colourful gradient
+   icon tile, a title and one short line. */
+.tools {
   display: grid;
-  grid-template-columns: 1fr 1fr;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
   gap: 24px;
-  max-width: 960px;
-  margin: 0 auto;
 }
 
-.plan {
-  display: flex;
-  flex-direction: column;
-  padding: 10px;
-  border-radius: 30px;
+.tool {
+  padding: 28px;
+  border-radius: 24px;
   background: #fff;
-  border: 1px solid var(--line);
-  box-shadow: var(--shadow);
-  transition:
-    transform 0.35s var(--ease),
-    box-shadow 0.35s var(--ease);
+  box-shadow:
+    0 1px 2px rgb(16 40 28 / 0.04),
+    0 10px 30px -14px rgb(16 40 28 / 0.14);
 }
 
-.plan:hover {
-  transform: translateY(-6px);
-  box-shadow: var(--shadow-lg);
-}
-
-.plan__head {
-  position: relative;
-  padding: 26px;
-  border-radius: 22px;
-  background: var(--canvas);
-  overflow: hidden;
-}
-
-.plan__head h3 {
-  font-size: 22px;
-  letter-spacing: -0.03em;
-}
-
-.plan__head > p {
-  margin-top: 4px;
-  color: var(--text);
-  font-size: 14.5px;
-}
-
-.plan__title-row {
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  gap: 12px;
-}
-
-.plan__badge {
-  padding: 4px 11px;
-  border-radius: 999px;
-  background: rgb(0 0 0 / 0.28);
-  border: 1px solid rgb(255 255 255 / 0.35);
-  font-size: 12px;
-  font-weight: 600;
-}
-
-.plan__price {
-  display: flex;
-  align-items: baseline;
-  flex-wrap: wrap;
-  gap: 8px;
-  margin: 22px 0 22px;
-}
-
-.plan__price b {
-  font-size: 50px;
-  line-height: 1;
-  letter-spacing: -0.05em;
-  font-variant-numeric: tabular-nums;
-  transition:
-    opacity 0.25s var(--ease),
-    transform 0.25s var(--ease);
-}
-
-.plan__price span {
-  color: var(--muted);
-  font-size: 14px;
-  transition: opacity 0.25s var(--ease);
-}
-
-.plan__price.is-swapping b,
-.plan__price.is-swapping span {
-  opacity: 0;
-  transform: translateY(-8px);
-}
-
-.plan__list {
+.tool__icon {
   display: grid;
-  gap: 12px;
-  padding: 22px 22px 26px;
+  place-items: center;
+  width: 50px;
+  height: 50px;
+  border-radius: 12px;
+  color: #fff;
+  box-shadow: inset 0 0 0 1px rgb(255 255 255 / 0.25);
 }
 
-.plan__list li {
-  display: flex;
-  align-items: flex-start;
-  gap: 10px;
-  font-size: 15px;
+/* The glyphs are drawn inside a 24-unit box with some margin, so a 36px box
+   gives a shape about 25px across: half the tile, as in the reference. */
+.tool__icon .i {
+  width: 36px;
+  height: 36px;
+  stroke-width: 1.7;
+}
+
+.tool__icon--1 { background: linear-gradient(135deg, #34d399, #0d9488); }
+.tool__icon--2 { background: linear-gradient(135deg, #fda4af, #f43f5e); }
+.tool__icon--3 { background: linear-gradient(135deg, #c4b5fd, #7c3aed); }
+.tool__icon--4 { background: linear-gradient(135deg, #bef264, #16a34a); }
+.tool__icon--5 { background: linear-gradient(135deg, #7dd3fc, #2563eb); }
+.tool__icon--6 { background: linear-gradient(135deg, #fcd34d, #ea580c); }
+.tool__icon--7 { background: linear-gradient(135deg, #5eead4, #0891b2); }
+.tool__icon--8 { background: linear-gradient(135deg, #f0abfc, #8b5cf6); }
+.tool__icon--9 { background: linear-gradient(135deg, #67e8f9, #4f46e5); }
+.tool__icon--10 { background: linear-gradient(135deg, #6ee7b7, #65a30d); }
+.tool__icon--11 { background: linear-gradient(135deg, #fdba74, #db2777); }
+.tool__icon--12 { background: linear-gradient(135deg, #86efac, #0284c7); }
+
+.tool h3 {
+  margin-top: 20px;
+  font-size: 19px;
+  font-weight: 600;
+  letter-spacing: -0.025em;
+}
+
+.tool p {
+  margin-top: 6px;
   color: var(--text);
-}
-
-.plan__list .i {
-  margin-top: 2px;
-  width: 20px;
-  height: 20px;
-  padding: 3px;
-  border-radius: 50%;
-  background: var(--brand-soft);
-  color: var(--brand-700);
-  stroke-width: 2.8;
-}
-
-/* The same calm deep-green surface as the hero (grain from .has-grain), with
-   one faint teal light in the corner; white text stays above 8:1. */
-.plan--featured .plan__head {
-  color: #fff;
-  background:
-    radial-gradient(420px 260px at 100% 0%, rgb(45 212 191 / 0.14), transparent 70%),
-    linear-gradient(160deg, var(--deep-900) 0%, var(--deep-800) 60%, var(--deep-700) 100%);
-}
-
-.plan--featured .plan__head > p,
-.plan--featured .plan__price span {
-  color: #fff;
-}
-
-.plan--featured .btn--light {
-  border-color: transparent;
+  font-size: 15px;
 }
 
 /* ---------- FAQ ---------- */
@@ -1736,7 +1656,7 @@ html:not(.js) .nav,
    ========================================================================== */
 @media (max-width: 960px) {
   :root {
-    --nav-h: 68px;
+    --nav-h: calc(68px + var(--bar-h));
   }
 
   .nav__links,
@@ -1810,9 +1730,8 @@ html:not(.js) .nav,
     right: 20px;
   }
 
-  .plans {
-    grid-template-columns: 1fr;
-    max-width: 560px;
+  .tools {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
   }
 
   .faq {
@@ -1856,25 +1775,24 @@ html:not(.js) .nav,
     padding: 0 16px;
   }
 
+  /* The phone frame is at most 340px wide, inside 16px of padding, with 18px
+     of padding and border around the capture cut to 390 x 584: 70% of its
+     height is 104.82% of the width less 39.81px, at most 350.1px. */
   .hero {
     --hero-gap: 40px;
+    --hero-overlap: min(350.1px, 104.82% - 39.81px);
   }
 
   .hero__panel {
-    padding: 36px 0 24px;
-    border-radius: 26px;
-  }
-
-  .hero__panel::after {
-    content: none;
+    --hero-fade: 280px;
+    padding-top: 36px;
+    border-radius: 26px 26px 0 0;
   }
 
   /* Phones get the kit's phone layout of the dashboard (the <picture> source),
-     cut just into the revenue card below the five KPI cards. The whole window
-     stays inside the card. */
+     cut just into the revenue card below the five KPI cards. */
   .hero__stage {
     max-width: 340px;
-    margin-bottom: 0;
   }
 
   .hero__frame {
@@ -1958,6 +1876,42 @@ html:not(.js) .nav,
     grid-template-columns: minmax(0, 1fr);
   }
 
+  .tools {
+    grid-template-columns: minmax(0, 1fr);
+    gap: 12px;
+  }
+
+  /* One per row: the icon sits beside the text, so twelve cards stay short. */
+  .tool {
+    display: grid;
+    grid-template-columns: auto minmax(0, 1fr);
+    column-gap: 16px;
+    padding: 20px;
+    border-radius: 20px;
+  }
+
+  .tool__icon {
+    grid-row: span 2;
+    width: 44px;
+    height: 44px;
+    border-radius: 11px;
+  }
+
+  .tool__icon .i {
+    width: 31px;
+    height: 31px;
+  }
+
+  .tool h3 {
+    margin-top: 0;
+    font-size: 17px;
+  }
+
+  .tool p {
+    margin-top: 4px;
+    font-size: 14.5px;
+  }
+
   /* The whole registrations list would shrink to a third here. Show its
      right-hand part at 60% instead: dates, amounts, the Pending badges and the
      approve and decline buttons. It runs off the left edge, which fades. */
@@ -1995,6 +1949,16 @@ html:not(.js) .nav,
 }
 
 /* Small phones, down to the 320px reflow width. */
+@media (max-width: 560px) {
+  .beta-bar__long {
+    display: none;
+  }
+
+  .beta-bar__short {
+    display: inline;
+  }
+}
+
 @media (max-width: 400px) {
   /* Four 44px social buttons need more than half of a 320px screen. */
   .footer__contact {
@@ -2055,6 +2019,7 @@ html:not(.js) .nav,
     scale: none !important;
   }
 
+  .beta-bar,
   .nav,
   .skip-link {
     display: none !important;
