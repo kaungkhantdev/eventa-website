@@ -22,8 +22,8 @@
   if (reduceMotion || !hasObserver || late) {
     revealables.forEach(show);
   } else {
-    // The hero is the first screen: its blocks (the product window and its
-    // toasts too, even when they start below the fold on a short screen) play
+    // The hero is the first screen: its blocks (the product window too, even
+    // when it starts below the fold on a short screen) play
     // their entrance on load, staggered by --d, instead of waiting for a scroll.
     revealables.filter((el) => el.closest(".hero")).forEach(show);
     const reveal = new IntersectionObserver(

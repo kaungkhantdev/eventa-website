@@ -63,8 +63,8 @@ http://localhost:4600. There are no tests, linter or build step, so before calli
   every block at once. Without JavaScript nothing is hidden.
 - **Nothing loops.** No `infinite` animation and no timer-driven motion: a loop would need a pause
   control (WCAG 2.2.2). The page had one and dropped it when it stopped looping.
-- **Nav.** White text on a transparent bar over the hero; solid (`.is-scrolled`) after 12px of
-  scroll, and solid without JavaScript. It highlights the link of the section in view.
+- **Nav.** It sits on the white page above the hero card, and turns into a solid bar
+  (`.is-scrolled`) after 12px of scroll. Without JavaScript it is solid from the start. It highlights the link of the section in view.
 - **Mobile menu** (960px and narrower). It closes on Escape (focus returns to the toggle), on a
   link, on a click outside the nav, and when focus tabs out. Without JavaScript the toggle cannot
   open it; the footer carries the same links.
@@ -73,9 +73,8 @@ http://localhost:4600. There are no tests, linter or build step, so before calli
 - **FAQ.** One answer open at a time, the first open to start. Without JavaScript every answer
   shows; closed answers don't print.
 - **Focus.** A dark ring by default and a white one on the dark-green surfaces (`.hero__panel`,
-  the nav over the hero, `.plan--featured`). The skip link goes to `#main`.
-- **Print** hides the nav, the skip link and the hero notifications (`.toast`) and shows every
-  reveal block.
+  `.plan--featured`). The skip link goes to `#main`.
+- **Print** hides the nav and the skip link, and shows every reveal block.
 
 ## Product screenshots (`assets/shots/`)
 
@@ -117,8 +116,6 @@ When a file changes, update the markup that describes it:
 - Tile crops carry `style="--w: <1x width>px"`, and `--top` where a crop is lifted so its cut falls
   between rows. The survey card's crop size is also written into `.spot-survey` in `styles.css`.
 - Alt texts quote the figures in the shot. Rewrite them when the figures change.
-- The two notifications over the hero ("Payment received", "Almost sold out") are HTML, not
-  captures, and they quote names and numbers from `hero`. Keep them in step with it.
 
 ## Design conventions to preserve
 
@@ -128,6 +125,9 @@ When a file changes, update the markup that describes it:
   are for the hero panel and the featured plan only; the rest of the page is light.
 - **Product windows** use `--shadow-window` over the kit's grey (`--kit-canvas`); cards use the
   lighter `--shadow-*` steps.
+- **Use-case shots sit in an app window** (`.spot-window`: a top bar with three dots and an empty
+  address bar) inside a patterned frame. Keep the address bar empty: Eventa's domain is not
+  decided, so never write a URL there.
 - Font **Inter**. Currency **Thai Baht (฿)**.
 
 ## Contracts with sibling repos (no shared package)
