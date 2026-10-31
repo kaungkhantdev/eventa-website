@@ -1775,39 +1775,28 @@ html:not(.js) .nav,
     padding: 0 16px;
   }
 
-  /* The phone frame is at most 340px wide, inside 16px of padding, with 18px
-     of padding and border around the capture cut to 390 x 584: 70% of its
-     height is 104.82% of the width less 39.81px, at most 350.1px. */
+  /* Phones show the same 1280 x 790 capture. The frame is as wide as the
+     container (100% less 32px of padding), with 18px of padding and border
+     around the capture: 70% of its height is 43.2% of the width less 9px.
+     The fade starts below the frame's top edge, as on desktop. */
   .hero {
     --hero-gap: 40px;
-    --hero-overlap: min(350.1px, 104.82% - 39.81px);
+    --hero-overlap: calc(43.2% - 9px);
   }
 
   .hero__panel {
-    --hero-fade: 280px;
+    --hero-fade: calc(37.8vw - 8px);
     padding-top: 36px;
     border-radius: 26px 26px 0 0;
   }
 
-  /* Phones get the kit's phone layout of the dashboard (the <picture> source),
-     cut just into the revenue card below the five KPI cards. */
-  .hero__stage {
-    max-width: 340px;
-  }
-
   .hero__frame {
     padding: 8px;
-    border-radius: 30px;
+    border-radius: 18px;
   }
 
   .hero__shot {
-    border-radius: 22px;
-  }
-
-  .hero__shot img {
-    aspect-ratio: 390 / 584;
-    object-fit: cover;
-    object-position: top;
+    border-radius: 10px;
   }
 
   .spotlight__visual--pair {
