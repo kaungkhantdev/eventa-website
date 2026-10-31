@@ -19,7 +19,7 @@ is the Inter font from Google Fonts; offline, the page falls back to the system 
   scroll reveal, keyframes, the responsive `@media` blocks, reduced motion and print, in that order.
 - `js/main.js` — one IIFE, no dependencies: scroll reveal, nav, mobile menu, the FAQ accordion
   and the footer year.
-- `assets/shots/` — product screenshots as WebP, `@1x` and `@2x` (`hero-mobile` also `@3x`).
+- `assets/shots/` — product screenshots as WebP, `@1x` and `@2x`.
 
 ## Running / previewing
 
@@ -84,7 +84,6 @@ Each one is a capture of a page in eventa-ui-kit, at the viewport given here:
 | File | Kit page · viewport |
 | --- | --- |
 | `hero` | `admin/dashboard.html` · 1280×800 |
-| `hero-mobile` | `admin/dashboard.html` · 390×844, phone layout |
 | `feature-sales` | `admin/tickets.html` · 1440×900 |
 | `feature-attendees` | `admin/attendees.html` · 1440×900 |
 | `feature-messaging` | `admin/messaging-templates.html` · 760×900 |
@@ -112,8 +111,8 @@ The capture script is not in this repo. A new capture has to match the others:
 When a file changes, update the markup that describes it:
 
 - The `<img>`'s `width` and `height` are the 1x size, and its `srcset` lists the `@1x` and `@2x`
-  files. `hero-mobile`'s size and its `@3x` file sit on the `<source media="(max-width: 720px)">`.
-  `solution-concerts` lists `760w, 1520w` with a `sizes` list built on that width; update both.
+  files. `hero` (one image for every width; phones show it scaled down) lists `1280w, 2560w` and
+  `solution-concerts` `760w, 1520w`, each with a `sizes` list built on that width; update both.
 - Tile crops carry `style="--w: <1x width>px"`, and `--top` where a crop is lifted so its cut falls
   between rows. The survey card's crop size is also written into `.spot-survey` in `styles.css`.
 - Alt texts quote the figures in the shot. Rewrite them when the figures change.

@@ -164,29 +164,23 @@
 
         <!-- The real product: the Eventa dashboard as captured from the UI kit
              (sample data), in a frosted frame. Pulled up so 70% of it sits on the
-             green card and 30% on the page. Phones get the kit's own phone layout
-             of the screen. -->
+             green card and 30% on the page. Phones show the same screen, scaled
+             down. sizes: the frame's width less its 22px (18px on phones) of
+             padding and border. -->
         <div class="container hero__showcase">
           <div class="hero__stage" data-reveal="zoom" style="--d: 380ms">
             <div class="hero__frame">
               <div class="shot-window hero__shot">
-                <picture>
-                  <source
-                    media="(max-width: 720px)"
-                    srcset="assets/shots/hero-mobile@1x.webp 1x, assets/shots/hero-mobile@2x.webp 2x, assets/shots/hero-mobile@3x.webp 3x"
-                    width="390"
-                    height="844"
-                  />
-                  <img
-                    src="assets/shots/hero@1x.webp"
-                    srcset="assets/shots/hero@1x.webp 1x, assets/shots/hero@2x.webp 2x"
-                    width="1280"
-                    height="790"
-                    fetchpriority="high"
-                    decoding="async"
-                    alt="The Eventa dashboard: 1,340 registrations, ฿48.29k in ticket revenue, 12 upcoming events, an 87% check-in rate and 78% of capacity filled."
-                  />
-                </picture>
+                <img
+                  src="assets/shots/hero@1x.webp"
+                  srcset="assets/shots/hero@1x.webp 1280w, assets/shots/hero@2x.webp 2560w"
+                  sizes="(max-width: 720px) calc(100vw - 50px), min(1130px, calc(100vw - 70px))"
+                  width="1280"
+                  height="790"
+                  fetchpriority="high"
+                  decoding="async"
+                  alt="The Eventa dashboard: 1,340 registrations, ฿48.29k in ticket revenue, 12 upcoming events, an 87% check-in rate and 78% of capacity filled."
+                />
               </div>
             </div>
           </div>
