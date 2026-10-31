@@ -752,8 +752,8 @@ html:not(.js) .nav,
   margin: 26px auto 0;
   font-size: clamp(40px, 6.2vw, 74px);
   line-height: 1.02;
-  font-weight: 700;
-  letter-spacing: -0.045em;
+  font-weight: 500;
+  letter-spacing: -0.035em;
   text-wrap: balance;
   color: #fff;
 }
