@@ -22,8 +22,8 @@
   if (reduceMotion || !hasObserver || late) {
     revealables.forEach(show);
   } else {
-    // The hero is the first screen: its blocks (the product window and its
-    // toasts too, even when they start below the fold on a short screen) play
+    // The hero is the first screen: its blocks (the product window too, even
+    // when it starts below the fold on a short screen) play
     // their entrance on load, staggered by --d, instead of waiting for a scroll.
     revealables.filter((el) => el.closest(".hero")).forEach(show);
     const reveal = new IntersectionObserver(
@@ -95,36 +95,6 @@
   nav.addEventListener("focusout", (event) => {
     if (!menu.hidden && event.relatedTarget && !nav.contains(event.relatedTarget)) setMenu(false);
   });
-
-  /* ---------- Pricing: monthly / yearly ---------- */
-  const billing = $("[data-billing]");
-  const billingWrap = billing && billing.closest(".billing");
-  const priceEls = $$("[data-price], [data-price-note]");
-
-  function setBilling(yearly) {
-    if ((billing.getAttribute("aria-checked") === "true") === yearly) return;
-    billing.setAttribute("aria-checked", String(yearly));
-    billingWrap.classList.toggle("is-yearly", yearly);
-    billingWrap.classList.toggle("is-monthly", !yearly);
-    const boxes = new Set(priceEls.map((el) => el.closest(".plan__price")));
-    boxes.forEach((box) => box.classList.add("is-swapping"));
-    setTimeout(
-      () => {
-        priceEls.forEach((el) => (el.textContent = yearly ? el.dataset.yearly : el.dataset.monthly));
-        boxes.forEach((box) => box.classList.remove("is-swapping"));
-      },
-      reduceMotion ? 0 : 220,
-    );
-  }
-
-  if (billing) {
-    billingWrap.classList.add("is-monthly");
-    billing.addEventListener("click", () => setBilling(billing.getAttribute("aria-checked") !== "true"));
-    // Clicking either label also sets the switch.
-    $$(".billing span[id]").forEach((label) =>
-      label.addEventListener("click", () => setBilling(label.id === "bill-yearly")),
-    );
-  }
 
   /* ---------- FAQ accordion: one answer open at a time ---------- */
   const accordion = $("[data-accordion]");

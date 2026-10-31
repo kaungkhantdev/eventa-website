@@ -1,7 +1,7 @@
 # eventa-website
 
 The landing page for **Eventa**, an event registration and management platform for
-organizers in Thailand.
+event organizers.
 
 It is plain HTML, CSS and JavaScript. There is nothing to install or build.
 
@@ -15,13 +15,13 @@ Open `index.html` in your browser.
 | --- | --- |
 | `index.html` | The page |
 | `css/styles.css` | The styles |
-| `js/main.js` | The menu, scroll animations, pricing switch and FAQ |
+| `js/main.js` | The menu, scroll animations and FAQ |
 | `assets/shots/` | Screenshots of the app, taken from [eventa-ui-kit](https://github.com/kaungkhantdev/eventa-ui-kit) |
 
 ## Before launch
 
-Some links, the prices and the contact button are placeholders. Search `index.html` for
-`PLACEHOLDER` to find them.
+Some links, the contact button and the beta notice at the top are placeholders.
+Search `index.html` for `PLACEHOLDER` to find them.
 
 ## License
 
