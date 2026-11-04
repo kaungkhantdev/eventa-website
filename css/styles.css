@@ -650,12 +650,12 @@ html:not(.js) .nav,
    --hero-gap: space between the copy and the product window.
    --hero-overlap: 70% of the frame's height. The frame is as wide as the
    container (100% less 48px of padding, at most 1152px); inside it, 22px of
-   padding and border hold the 1280 x 857 capture. That works out to 46.87% of
-   the width less 17.41px, at most 545px. (Margin and padding percentages
+   padding and border hold the 1280 x 835 capture. That works out to 45.66% of
+   the width less 16.56px, at most 531.4px. (Margin and padding percentages
    are shares of the width.) */
 .hero {
   --hero-gap: 64px;
-  --hero-overlap: min(545px, 46.87% - 17.41px);
+  --hero-overlap: min(531.4px, 45.66% - 16.56px);
   padding-top: var(--nav-h);
 }
 
@@ -668,7 +668,7 @@ html:not(.js) .nav,
    window sits above the card, so it stays sharp. --hero-fade is how tall the
    fade is. */
 .hero__panel {
-  --hero-fade: 476px;
+  --hero-fade: 464px;
   margin: 0 clamp(8px, 1.4vw, 20px);
   padding: 56px 0 calc(var(--hero-gap) + var(--hero-overlap));
   overflow: hidden;
@@ -1775,17 +1775,17 @@ html:not(.js) .nav,
     padding: 0 16px;
   }
 
-  /* Phones show the same 1280 x 857 capture. The frame is as wide as the
+  /* Phones show the same 1280 x 835 capture. The frame is as wide as the
      container (100% less 32px of padding), with 18px of padding and border
-     around the capture: 70% of its height is 46.87% of the width less 10.83px.
+     around the capture: 70% of its height is 45.66% of the width less 10.23px.
      The fade starts below the frame's top edge, as on desktop. */
   .hero {
     --hero-gap: 40px;
-    --hero-overlap: calc(46.87% - 10.83px);
+    --hero-overlap: calc(45.66% - 10.23px);
   }
 
   .hero__panel {
-    --hero-fade: calc(41vw - 9.5px);
+    --hero-fade: calc(40vw - 9px);
     padding-top: 36px;
     border-radius: 26px 26px 0 0;
   }
