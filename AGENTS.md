@@ -62,7 +62,7 @@ grep -n PLACEHOLDER index.html   # undecided links, contact channel, beta notice
 
 `ls assets/shots` lists the shots (`<name>@1x.webp` and `@2x`). Each one's kit page is in the
 `index.html` comment before it; the hero's is `admin/home.html`. No repo holds the capture
-script, so record each shot's viewport here: hero 1280×857; feature-sales, feature-attendees,
+script, so record each shot's viewport here: hero 1280×835; feature-sales, feature-attendees,
 solution-workshops-survey 1440×900; feature-messaging 760×900; solution-conferences,
 solution-concerts 760×1100; solution-workshops 1000×900.
 
