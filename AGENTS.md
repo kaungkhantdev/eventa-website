@@ -66,12 +66,12 @@ script, so record each shot's viewport here: hero 1280×835; feature-sales, feat
 solution-workshops-survey 1440×900; feature-messaging 760×900; solution-conferences,
 solution-concerts 760×1100; solution-workshops 1000×900.
 
-To match them, serve the kit over http (`python3 -m http.server 4599` in eventa-ui-kit;
-`file://` breaks its logo mask) with localStorage `eventa-theme` set to `light` and
-`prefers-color-scheme: light`. Wait for fonts, Tailwind and charts; turn off animations; hide
-scrollbars, tooltips, caret, pointer and focus. Capture each density at its own device scale
-factor; never shrink the 2x. Crop between rows, never through text, with up to 16px of kit
-grey. Swap contact details in the browser, never in the kit's files.
+To match them, serve the kit over http (`python3 -m http.server 4599` in eventa-ui-kit) with
+localStorage `eventa-theme` set to `light` and `prefers-color-scheme: light`. Wait for fonts,
+Tailwind and charts; turn off animations; hide scrollbars, tooltips, caret, pointer and focus.
+Capture each density at its own device scale factor; never shrink the 2x. Crop between rows,
+never through text, with up to 16px of kit grey. Swap contact details in the browser, never in
+the kit's files.
 
 When a shot changes, update in `index.html` its 1x `width`/`height`, `srcset` (and `sizes` on
 `hero` and `solution-concerts`), the crop's `--w`/`--top`, and the alt text, which quotes the
